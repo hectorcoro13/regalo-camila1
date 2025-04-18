@@ -10,14 +10,15 @@
       background: #fff0f5;
       overflow: hidden;
       font-family: 'Segoe UI', sans-serif;
+      color: #b22222;
     }
 
+    /* Texto principal */
     #loveText {
       position: absolute;
       top: 30px;
       width: 100%;
       text-align: center;
-      color: #b22222;
       font-size: 2rem;
       font-weight: bold;
       text-shadow: 2px 2px 5px #ffcad4;
@@ -26,56 +27,132 @@
     }
 
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
+    }
+
+    /* Imagen decorativa en esquina superior derecha */
+    #cornerImage {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 80px;
+      height: auto;
+      opacity: 0.8;
+      animation: fadeIn 2s ease-out forwards;
+      opacity: 0;
+    }
+
+    /* Contenedor del texto final */
+    #conclusion {
+      position: absolute;
+      bottom: 80px;
+      left: 20px;
+      right: 20px;
+      text-align: left;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(178, 34, 34, 0.3);
+      animation: fadeIn 4s ease-out forwards;
+      opacity: 0;
+    }
+
+    /* Footer */
+    footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      font-style: italic;
+      color: #900000;
+      text-shadow: 1px 1px 3px #ffb6c1;
+      animation: fadeIn 5s ease-out forwards;
+      opacity: 0;
     }
   </style>
 </head>
 <body>
+  <!-- Mensaje principal -->
   <div id="loveText">Cada rosa de este ramo te dice cuánto te amo 🌹</div>
+
+  <!-- Imagen decorativa -->
+  <img id="cornerImage" src="data:image/jpeg;base64,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" alt="Corazón" />
+
+  <!-- Canvas de Three.js -->
   <canvas id="canvas"></canvas>
 
-  <script type="module">
-    import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
-    import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/loaders/GLTFLoader.js';
-    import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/controls/OrbitControls.js';
+  <!-- Texto final romántico -->
+  <div id="conclusion">
+    Cada día al verte descubro en tu mirada un universo donde habita mi dicha, y en los momentos dificiles me refugio en el calor de tus abrazos, soñando con el momento en que nuestras manos se unan para siempre en un “sí” eterno. Quiero recorrer contigo el sendero de la vida, construir un hogar lleno de risas compartidas y pintar de esperanza cada rincón con los sueños que nazcan de nuestro amor. Sueño con el eco de pequeñas risas corriendo por los pasillos de nuestro nido, con las huellas diminutas de nuestros hijos pisando la misma tierra que nos vio enamorarnos, y con la certeza de que, juntos, seremos la melodía más hermosa que late al compás de dos corazones entregados. Te amo con tanta fuerza que cada latido pronuncia tu nombre, y mi mayor deseo es sellar esta promesa de amarte y cuidarte hasta el fin de mis días.
+    </div>
 
+  <!-- Footer -->
+  <footer>siempre amándote, siempre tuyo</footer>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js",
+        "GLTFLoader": "https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/loaders/GLTFLoader.js",
+        "OrbitControls": "https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/controls/OrbitControls.js"
+      }
+    }
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'GLTFLoader';
+    import { OrbitControls } from 'OrbitControls';
+
+    // 1) Crea el loader
+    const loader = new GLTFLoader();
+
+    // 2) Renderer y escena
     const canvas = document.getElementById('canvas');
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 100);
-    camera.position.set(0, 1.5, 3);
+    camera.position.set(0, 1.5, 5);
 
+    // 3) Luces
     const light = new THREE.DirectionalLight(0xffffff, 1.2);
-    light.position.set(3, 5, 3);
+    light.position.set(5, 10, 7);
     scene.add(light);
     scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
-    const loader = new GLTFLoader();
-    loader.load('https://models.babylonjs.com/rose_bouquet.glb', function(gltf) {
-      const model = gltf.scene;
-      model.scale.set(1.5, 1.5, 1.5);
-      scene.add(model);
-    }, undefined, function(error) {
-      console.error('Error al cargar el ramo:', error);
-    });
+    // 4) Carga el modelo
+    loader.load('/public/models/ROSAS13.glb',
+      function(gltf) {
+        const model = gltf.scene;
+        model.scale.set(1.5, 1.5, 1.5);
+        scene.add(model);
+      },
+      undefined,
+      function(error) {
+        console.error('Error al cargar el ramo:', error);
+      }
+    );
 
+    // 5) Controles
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.autoRotate = true;
     controls.autoRotateSpeed = 1.5;
 
+    // 6) Animación
     function animate() {
       requestAnimationFrame(animate);
       controls.update();
       renderer.render(scene, camera);
     }
-
     animate();
 
+    // 7) Resize
     window.addEventListener('resize', () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
