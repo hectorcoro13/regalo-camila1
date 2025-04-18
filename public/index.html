@@ -126,7 +126,7 @@
     scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
     // 4) Carga el modelo
-    loader.load('/public/models/ROSAS13.glb',
+    loader.load('./models/ROSAS13.glb',
       function(gltf) {
         const model = gltf.scene;
         model.scale.set(1.5, 1.5, 1.5);
